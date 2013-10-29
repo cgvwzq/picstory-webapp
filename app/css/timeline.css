@@ -1,0 +1,57 @@
+aside#timeline {
+	margin: 0 auto;
+	text-align: center;
+	max-height: 40%;
+}
+
+img.loading {
+	margin: 40px auto;	
+}
+
+svg {
+	display: none;
+}
+
+svg circle {
+	fill: white;
+	stroke: #6699FF;
+	stroke-width: 2px;
+}
+
+svg circle:active {
+	opacity: 0.5;
+}
+
+svg g.axis {
+	fill: none;
+	stroke: #CCCCFF;
+	shape-rendering: auto;
+}
+
+svg g.tick text {
+	fill: gray;
+	stroke: none;
+}
+
+svg g.time-info text {
+	fill: white;
+	opacity: 0.8;
+}
+
+svg g.time-info text.count {
+	fill: white;
+	stroke: black;
+}
+
+svg g.time-info rect {
+	fill: #CDC8B1;
+}
+
+svg g.time-info rect:active {
+	opacity: 0.5;
+}
+
+svg g.time-info rect.clicked {
+	fill: #1F7A68;
+	stroke: black;
+}

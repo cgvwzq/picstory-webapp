@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>aluApp</title>
+	<link rel="stylesheet" type="text/css" href="css/headers.css" />
+	<link rel="stylesheet" type="text/css" href="css/input_areas.css" />
+	<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+	<link rel="stylesheet" type="text/css" href="css/action_icons.css" />
+	<link rel="stylesheet" type="text/css" href="css/my.css" />
+	<link rel="stylesheet" type="text/css" href="css/timeline.css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.event.move.js"></script>
+	<script src="js/jquery.event.swipe.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/d3.js"></script>
+	<script src="js/timeline.js"></script>
+	<script src="js/carousel.js"></script>
+</head>
+<body role="app">
+	<main id="main" role="region">
+		<header>
+			<menu type="toolbar">
+				<a data-link="share"><span class="icon icon-add">compartir</span></a>
+			</menu>
+			<h1>aluApp</h1>
+		</header>
+		<aside id="timeline">
+			<img class="loading" src="img/ajax-loader.gif" />
+		</aside>
+		<nav>
+			<ul>
+				<li class="tab-link current" data-tab="mine">Main</li>
+				<li class="tab-link" data-tab="instagram">Instagram</li>
+			</ul>
+		</nav>
+		<section id="mine" class="current">
+		</section>
+		<section id="instagram">
+			<h2>Instagram</h2>
+		</section>
+	</main>
+	<section id="share" hidden role="region">
+		<header>
+			<a data-link="main"><span class="icon icon-back">volver</span></a>
+			<h1>Comparte</h1>
+		</header>
+		<form id="upload" onsubmit="return false">
+			<input type="hidden" name="latitud"></input>
+			<input type="hidden" name="longitud"></input>
+			<p>
+				<input type="text" name="titulo" placeholder="Título" maxlength="30" required />
+			</p>
+			<p>
+				<textarea name="descripcion" placeholder="Descripción" maxlength="120"></textarea>
+			<p>
+				<img id="media" class="imagenTemporal empty" src="img/empty.png" />
+				<!-- attribute "accept" ver si vale la pena -->
+				<input id="media-sec" style="display:none" type="file" />
+				<span class="removeImage">X</span>
+				<select name="categoria">
+					<option disabled="disabled" selected="selected">Categorías</option>
+					<option>Eventos/Ocio</option> <!-- musica cine? -->
+					<option>Animales</option>
+					<option>Comida</option>
+					<option>Deporte</option>
+					<option>Viajes/Turismo</option>
+					<option>Personas</option>
+				</select>
+			</p>
+			<p>
+				<button type="button" class="default">Comparte</button>
+			</p>
+		</form>
+	</section>
+
+</body>
+</html>
+
