@@ -163,6 +163,8 @@ app.post('/upload', function(req, res) {
 
 });
 
+// Si hay múltiples instancias no podemos usar sesiones, hay que elminarlas o utilizar el
+// propio mongodb o memcached para almacenarlas
 app.get('/auth/twitter', function(req, res){
 	oa.getOAuthRequestToken(function(error, oauth_token, oauth_token_secret, results){
 		if (error) {
