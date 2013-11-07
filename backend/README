@@ -1,1 +1,9 @@
-npm install ...
+Es necesario tener los modulos:
+- express 
+- cors
+- mongodb
+- winston
+- connect-multiparty 
+
+BD: pictory
+Collections: data, logs
