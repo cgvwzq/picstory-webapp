@@ -1,5 +1,7 @@
 // Variables globales para las coordenadas
-var long, lat;
+var LONG, LAT;
+var URL_B = "http://backend.picstory.es/";
+var URL_D = "http://backend.picstory.es/";
 
 // Inicializa al cargar el documento
 $(document).ready(function() {
@@ -7,8 +9,8 @@ $(document).ready(function() {
 	// Si puede obtener las coordenadas solicita el Timeline
 	if ("geolocation" in navigator) {
 		//navigator.geolocation.getCurrentPosition(requestTimeline, errorNoGPS, {enableHighAccuracy:true, maximumAge:0, timeout:30000});
-		long = -0.889581;
-		lat = 41.648790999999996;
+		LONG= -0.889581;
+		LAT= 41.648790999999996;
 		requestTimeline();
 	} 
 	// Sino muestra un error y la aplicación no inciia
@@ -56,15 +58,15 @@ function unlockMenu() {
 function requestTimeline(p) {
 
 	if (p) {
-		long = p.coords.longitude;
-		lat = p.coords.latitude;
+		LONG= p.coords.longitude;
+		LAT= p.coords.latitude;
 	} else {
 		$("img.loading").show();
 	}
 	
 	var http = new XMLHttpRequest();
 	
-	http.open('GET', '/timeline?longitud='+long+'&latitud='+lat, true);
+	http.open('GET', URL_B+'/timeline?longitud='+LONG+'&latitud='+LAT, true);
 	http.onload = function() {
 		data = JSON.parse(http.responseText);
 		data.map(function(e){
@@ -82,7 +84,7 @@ function requestImages(d){
 
 	var http = new XMLHttpRequest();
 		
-	http.open('GET', '/view?longitud='+long+'&latitud='+lat+'&fecha='+d._id.getTime(), true);
+	http.open('GET', URL_B+'/view?longitud='+LONG+'&latitud='+LAT+'&fecha='+d._id.getTime(), true);
 	http.onload = function() {
 		$("#carousel").empty();
 		loadImages(http.responseText);
@@ -111,7 +113,7 @@ function loadImages(json) {
 			$("<article>", {id:"slide_"+docs[i]._id, class:"slide img_slide right"})
 			.append(
 				$("<header>").append(titulo, fecha, desc),
-				$("<img>", {src:"/thumbnails/"+docs[i].media.ruta})
+				$("<img>", {src:URL_D+"media/"+docs[i].media.ruta})
 			)
 			.appendTo(wrap);
 		}
@@ -168,13 +170,13 @@ $(document).ready(function() {
 	});
 	
 	$("#upload button").click(function(){
-		$("#upload input[name=longitud]").val(long);
-		$("#upload input[name=latitud]").val(lat);
+		$("#upload input[name=longitud]").val(LONG);
+		$("#upload input[name=latitud]").val(LAT);
 		if (check($("#upload")[0])) { 
 			var formData = new FormData($("#upload")[0]);
 			formData.append("media", file);
 			$.ajax({
-				url: '/upload',
+				url: URL_B+'/upload',
 				type: 'POST',
 				beforeSend: null,
 				success: function(d){
