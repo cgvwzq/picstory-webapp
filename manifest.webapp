@@ -1,10 +1,10 @@
 {
-    "name":"AluAPP",
+    "name":"PicStory",
     "developer": {
-        "name":"cgvwzq",
-        "url":"http://localhost:8888/"
+        "name":"Pepe Vila - @cgvwzq",
+        "url":"http://vwzq.net/"
     },
-    "launch_path": "/index.html",
+    "launch_path": "http://app.picstory.es/",
     "description":"Viaja, descubre y deja tu huella!",
     "icons":{
         "128":"/img/coche.png"
