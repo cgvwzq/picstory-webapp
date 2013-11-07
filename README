@@ -1,6 +1,0 @@
-A 29 de octubre de 2013 - Pepe Vila
-
- - backend/ (contiene los archivos que deberá ejecutar el servidor)
- - app/ (la aplicación HTML5 que deberá servir un servidor web)
-
-Las rutas de un lado a otro deberán configurarse adecuadamente cuando se lleve a un entorno de producción.
