@@ -1,6 +1,9 @@
-A 29 de octubre de 2013 - Pepe Vila
+jueves 7 de noviembre
 
- - backend/ (contiene los archivos que deberá ejecutar el servidor)
- - app/ (la aplicación HTML5 que deberá servir un servidor web)
+El proyecto se divide en dos ramas:
 
-Las rutas de un lado a otro deberán configurarse adecuadamente cuando se lleve a un entorno de producción.
+    - backend (api nodejs) 
+
+    - webapp (app html5 para ffxos)
+
+Cada una se va a desarrollar por separado.
