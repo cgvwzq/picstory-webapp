@@ -66,7 +66,7 @@ function requestTimeline(p) {
 	
 	var http = new XMLHttpRequest();
 	
-	http.open('GET', URL_B+'/timeline?longitud='+LONG+'&latitud='+LAT, true);
+	http.open('GET', URL_B+'timeline?longitud='+LONG+'&latitud='+LAT, true);
 	http.onload = function() {
 		data = JSON.parse(http.responseText);
 		data.map(function(e){
@@ -84,7 +84,7 @@ function requestImages(d){
 
 	var http = new XMLHttpRequest();
 		
-	http.open('GET', URL_B+'/view?longitud='+LONG+'&latitud='+LAT+'&fecha='+d._id.getTime(), true);
+	http.open('GET', URL_B+'view?longitud='+LONG+'&latitud='+LAT+'&fecha='+d._id.getTime(), true);
 	http.onload = function() {
 		$("#carousel").empty();
 		loadImages(http.responseText);
@@ -176,7 +176,7 @@ $(document).ready(function() {
 			var formData = new FormData($("#upload")[0]);
 			formData.append("media", file);
 			$.ajax({
-				url: URL_B+'/upload',
+				url: URL_B+'upload',
 				type: 'POST',
 				beforeSend: null,
 				success: function(d){
