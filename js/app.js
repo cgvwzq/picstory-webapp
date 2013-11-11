@@ -1,7 +1,7 @@
 // Variables globales para las coordenadas
 var LONG, LAT;
 var URL_B = "http://backend.picstory.es/";
-var URL_D = "http://backend.picstory.es/";
+var URL_D = "http://media.picstory.es/";
 
 // Inicializa al cargar el documento
 $(document).ready(function() {
@@ -113,7 +113,7 @@ function loadImages(json) {
 			$("<article>", {id:"slide_"+docs[i]._id, class:"slide img_slide right"})
 			.append(
 				$("<header>").append(titulo, fecha, desc),
-				$("<img>", {src:URL_D+"media/"+docs[i].media.ruta})
+				$("<img>", {src:URL_D+"pictures/"+docs[i].media.ruta})
 			)
 			.appendTo(wrap);
 		}
