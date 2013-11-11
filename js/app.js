@@ -1,7 +1,7 @@
 // Variables globales para las coordenadas
 var LONG, LAT;
-var URL_B = "http://backend.picstory.es/";
-var URL_D = "http://media.picstory.es/";
+var URL_B = "http://backend.pictory.es/";
+var URL_D = "http://media.pictory.es/";
 
 // Inicializa al cargar el documento
 $(document).ready(function() {
