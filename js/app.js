@@ -73,6 +73,8 @@ function requestTimeline(p) {
 			e._id = new Date(e._id);
 		});
 		loadTimeline(data);
+        // Carga contenido del bloque más actual
+        requestImages({"_id":new Date(data[0]._id)})
 	}
 	http.onerror = function(e){ alert(e) };
 	http.send();
