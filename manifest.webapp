@@ -1,7 +1,8 @@
 {
+    "version:"0.1",
     "name":"PicTory",
     "developer": {
-        "name":"Pepe Vila - @cgvwzq",
+        "name":"Pepe Vila",
         "url":"http://vwzq.net/"
     },
     "launch_path": "http://app.pictory.es/",
@@ -9,5 +10,5 @@
     "icons":{
         "128":"/img/coche.png"
     },
-    "permissions": {"geolocation":true}
+    "installs_allowed_from":["*"]
 }
