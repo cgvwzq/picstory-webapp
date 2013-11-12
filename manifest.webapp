@@ -5,9 +5,10 @@
         "name":"Pepe Vila",
         "url":"http://vwzq.net/"
     },
-    "launch_path": "http://app.pictory.es/",
     "description":"Viaja, descubre y deja tu huella!",
     "icons":{
+        "16":"/img/coche.png",
+        "48":"/img/coche.png",
         "128":"/img/coche.png"
     },
     "installs_allowed_from":["*"]
